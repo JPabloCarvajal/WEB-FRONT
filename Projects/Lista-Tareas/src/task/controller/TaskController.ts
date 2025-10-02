@@ -8,10 +8,8 @@ export default class TaskController {
   ) {}
 
   initComponent(): void {
-    // estado inicial
     this.taskView.render(this.taskModel.getAll());
 
-    // vista → modelo
     this.taskView.bindAdd(title => {
       this.taskModel.add(title);
       this.taskView.render(this.taskModel.getAll());
