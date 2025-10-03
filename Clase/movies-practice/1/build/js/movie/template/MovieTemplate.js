@@ -1,22 +1,15 @@
-import Movie from "../types/Movie";
-
-export default class MovieTemplate{
-
-    constructor(private movies: Movie[]){
-
+export default class MovieTemplate {
+    movies;
+    constructor(movies) {
+        this.movies = movies;
     }
-
-    readonly setMovies = (movies : Movie[]) =>{
-        this.movies = movies
-    }
-
-    readonly getMoviesHTML = (): string =>{
-        return `div class="movies">
-        ${this.movies.map(movie => this.getMovieHTML(movie)).join('')}`
-    }
-    
-    readonly getMovieHTML = (movie: Movie): string =>
-    `
+    setMovies = (movies) => {
+        this.movies = movies;
+    };
+    getMoviesHTML = () => {
+        return `div class = "movies">${this.movies.map(movie => this.getMovieHTML(movie)).join('')}`;
+    };
+    getMovieHTML = (movie) => `
     <div class="movies">
   <div class="movie">
     <div class="movie-poster">
@@ -89,6 +82,5 @@ export default class MovieTemplate{
         </div>
       </div>
     </div>
-  </div>
-    `
+  </div>`;
 }

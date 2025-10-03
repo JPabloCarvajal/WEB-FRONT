@@ -1,0 +1,12 @@
+# 1. crear carpeta y abrirla
+mkdir mvc-front && cd mvc-front
+
+# 2. iniciar package.json
+npm init -y
+
+# 3. instalar typescript como dev dependency (necesario para `npm run build`)
+npm install --save-dev typescript
+
+# 4. crear estructura de carpetas recomendada
+mkdir -p src/models src/views src/controllers src/assets build
+

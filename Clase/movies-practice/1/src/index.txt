@@ -1,0 +1,1 @@
+desde este index se inicializa simplemente la construccion del controllador principal llamado index

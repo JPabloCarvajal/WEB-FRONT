@@ -1,0 +1,24 @@
+Index view realmente lo que esta sirviendo como tal es como un puente
+entre el main o mejor dicho el contenido del html y la aplicacion front end
+para su creacion realmente en lo que nos basamos principalmente es en la instancia
+de un atributo main:
+"private readonly main: HtmlElement",
+--------
+Luego desde el constructor que no recibe ningun parametro, traemos el elemento main
+desde el documento html al que estamos manipulando, por medio de la invocacion del metodo selectquery:
+"constructor(){
+    this.main = document.querySelector("main") as HtmlElement
+}"
+------
+luego como nuestro atributo de main esta privado lo que hacemos es traerlo con un get:
+"
+readonly getMain = (): HtmlElement =>{
+    return this.main
+}
+"
+----
+y finalmente establecemos un metodo de inicializacion de componente para ver nuestra clase funcionando_:
+
+readonly initComponent = async () =>{
+    this.main.innerHTML += "<h1>Hola desde la vista del index</h1>"
+}

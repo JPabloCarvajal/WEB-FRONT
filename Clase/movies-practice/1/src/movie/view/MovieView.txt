@@ -1,0 +1,17 @@
+primero instanciamos al a la clase view para que sea la observadora del subject model
+"export default class MovieView extends Observer<MovieModel>"
+---
+luego en el constructor vamos a pasar el padre del elemento que pasamos desde su creacion en el index
+y agregamos el modelo al constructor ya que sera el que agregemos al subject que hacemos referencia
+"constructor(private readonly parent: HTMLElement, movieModel: MovieModel)"
+--
+ahora pasamos por el super el subject(movieModel) e instanciamos el constructor del template, 
+pasandole las movies que se obtengan creando un modelo movie nuevo:
+"this.movieTemplate = new MovieTemplate((this.subject as MovieModel).getMovies())"
+---
+en los 3 metodos siguientes update es un metodo que hereda de observer y pues se activa cada que el
+notify avisa que hubo un cambio, por tanto invoca al metodo render que lo que hace es llamar al modelo, y
+traer la nueva base de datos y setearla en el template para que se actualice en lo que se muestra
+
+---
+y por ultimo en el metodo init pues se traen y se setean de nuevo los cambios que se traigan del modelo

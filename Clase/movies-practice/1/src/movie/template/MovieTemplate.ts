@@ -1,22 +1,18 @@
-import Movie from "../types/Movie";
+import Movie from "../types/Movie.js";
 
-export default class MovieTemplate{
+export default class MovieTemplate {
+    constructor(private movies: Movie[]) { }
 
-    constructor(private movies: Movie[]){
-
-    }
-
-    readonly setMovies = (movies : Movie[]) =>{
+    readonly setMovies = (movies: Movie[]) => {
         this.movies = movies
     }
 
-    readonly getMoviesHTML = (): string =>{
-        return `div class="movies">
-        ${this.movies.map(movie => this.getMovieHTML(movie)).join('')}`
+    readonly getMoviesHTML = (): string => {
+        return `div class = "movies">${this.movies.map(movie => this.getMovieHTML(movie)).join('')}`
     }
-    
+
     readonly getMovieHTML = (movie: Movie): string =>
-    `
+        `
     <div class="movies">
   <div class="movie">
     <div class="movie-poster">
@@ -89,6 +85,7 @@ export default class MovieTemplate{
         </div>
       </div>
     </div>
-  </div>
-    `
+  </div>`
+
+
 }

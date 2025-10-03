@@ -1,0 +1,23 @@
+El contenido del moviemodel consiste en la suscripcion a un observador siendo un subject de tipo MovieView
+lo que lo hace heredar el metodo de notificar un cambio
+----
+entonces pues primero definimos el objeto del que queremos optar el comportamiento de la interfaz
+"private movies: Movie[];"
+----
+luego en el constructor dada la herencia ponemos un super y ademas inicializamos nuestro objeto-interfaz base
+"constructor(){
+        super()
+        this.movies = []
+    }"
+----
+agregamos un metodo get comun para nuestro atributo de clase
+----
+agregamos un metodo fetch de tipo promise ya que no se puede colgar en caso de que fuese un servidor
+que srive para traer las peliculas desde una base de datos
+----
+y finalmente el metodo de inicializar componente que es asincrono al usar el metodo fetch superior
+y notifica de un cambio a los observadores
+"readonly initComponent = async () =>{
+        this.movies = await this.fetchMovies()
+        this.notifyAllObservers()
+}"

@@ -1,0 +1,29 @@
+en el controlador del index es donde va a ocurrir la adicion de los demases componentes
+por lo que estableceremos un atributo del componente que deseemos agregar a nuestro "elemento main del html"
+"private readonly movie: MovieController" , 
+
+NOTA: notese que nos conectamos a los demas componentes por su controlador
+
+------------------------------------------------------------
+CONSTRUCTOR:
+Notese que los parametros de entrada son la vista y el modelo del index, mas sin embargo dentro de
+este metodo nos encontramos que hacemos la creacion del objeto del componente x "en este caso movies",
+pasandole el elemento main que declaramos en la vista del index, aqui es donde ocurre nuestra conexion entre
+componentes, ya que lo que realice la vista del componente x "o movies", se va a reflejar en el main definido
+del html desde el indexView
+"
+    constructor(private readonly view: IndexView, 
+        private readonly model: IndexModel){
+        this.movie = MovieFactory.create(this.view.getMain())
+    }
+"
+----------------------------------------------------------
+ahora para la inicializacion de nuestro controlador de index, centralizaremos la inicializacion del mvc index
+desde el controlador, añadiendole la inicializacion de los componentes 
+externos que hayamos escojido (por ahora solo movie.initComponent):
+"
+    constructor(private readonly view: IndexView, 
+        private readonly model: IndexModel){
+        this.movie = MovieFactory.create(this.view.getMain())
+    }
+"
