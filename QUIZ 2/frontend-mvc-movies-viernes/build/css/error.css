@@ -1,0 +1,31 @@
+.error-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.error-code {
+  font-size: 80px;
+  color: #e0a31d;
+  margin: 0;
+}
+
+.error-title {
+  margin: 10px 0;
+}
+
+.error-message {
+  color: #666;
+  margin: 10px 0 20px 0;
+}
+
+.error-button {
+  padding: 10px 30px;
+  background: #e0a31d;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.error-emoji {
+  font-size: 40px;
+}

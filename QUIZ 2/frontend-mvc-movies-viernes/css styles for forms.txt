@@ -1,0 +1,213 @@
+css para forms: 
+
+/* CSS: todo va dentro de .my-form */
+.home-hero {
+  --form-primary: #667eea;    /* Color principal */
+  --form-bg: #f8f9fa;         /* Fondo del contenedor */
+  --form-input-bg: #fff;      /* Fondo de inputs */
+  --form-border: #ddd;        /* Color de borde */
+  --form-radius: 6px;         /* Bordes redondeados */
+  --form-padding: 20px;       /* Espacio interno */
+}
+
+/* Contenedor */
+.home-hero {
+  background: var(--form-bg);
+  padding: var(--form-padding);
+  border-radius: var(--form-radius);
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Inputs, selects, textarea */
+.home-hero input,
+.home-hero select,
+.home-hero textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid var(--form-border);
+  border-radius: var(--form-radius);
+  background: var(--form-input-bg);
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+/* Focus */
+.home-hero input:focus,
+.home-hero select:focus,
+.home-hero textarea:focus {
+  border-color: var(--form-primary);
+  outline: none;
+}
+
+/* Botón */
+.home-hero button {
+  width: 100%;
+  padding: 12px;
+  background: var(--form-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--form-radius);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.home-hero button:hover {
+  background: darken(var(--form-primary), 10%);
+}
+
+/* Labels */
+.home-hero label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* Cambiar tema: basta con otra clase en el div */
+
+/* Ejemplo tema verde */
+.home-hero.green {
+  --form-primary: #28a745;
+  --form-bg: #e8f5e9;
+}
+
+/* Ejemplo tema oscuro */
+.home-hero.dark {
+  --form-primary: #444;
+  --form-bg: #333;
+  --form-input-bg: #555;
+  --form-border: #777;
+  color: #eee;
+}
+
+
+/* ===============================
+   ESTILO ULTRA SENCILLO
+   Contenedor: .simple-form
+   =============================== */
+
+.home-hero {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+/* Inputs sólo con línea inferior */
+.home-hero input,
+.home-hero textarea,
+.home-hero select {
+  width: 100%;
+  padding: 8px 0;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: transparent;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.home-hero input:focus,
+.home-hero textarea:focus,
+.home-hero select:focus {
+  outline: none;
+  border-bottom-color: #444;
+}
+
+/* Labels pequeñas sobre el campo */
+.home-hero label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+/* Botón plano */
+.home-hero button,
+.home-hero input[type="submit"] {
+  padding: 10px 20px;
+  background: none;
+  color: #444;
+  border: 2px solid #444;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.home-hero button:hover,
+.home-heroinput[type="submit"]:hover {
+  background: #444;
+  color: #fff;
+}
+
+/* ===============================
+   ESTILO REDONDEADO SUAVE
+   Contenedor: .rounded-form
+   =============================== */
+
+.home-hero {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #fafafa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  font-family: Arial, sans-serif;
+}
+
+/* Campos con sombra interior */
+.home-hero input,
+.home-hero textarea,
+.home-hero select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  font-size: 15px;
+  transition: box-shadow 0.3s;
+}
+
+.home-hero input:focus,
+.home-hero textarea:focus,
+.home-hero select:focus {
+  outline: none;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),
+              0 0 0 3px rgba(102,126,234,0.2);
+}
+
+/* Labels encima */
+.home-hero label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Botón outline */
+.home-hero button,
+.home-hero input[type="submit"] {
+  padding: 12px 25px;
+  background: transparent;
+  color: #667eea;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.home-hero button:hover,
+.home-hero input[type="submit"]:hover {
+  background: #667eea;
+  color: #fff;
+}
+

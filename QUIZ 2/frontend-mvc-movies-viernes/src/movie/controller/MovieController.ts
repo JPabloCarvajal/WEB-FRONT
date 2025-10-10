@@ -1,0 +1,28 @@
+import MovieModel from '../model/MovieModel.js'
+import MovieView from '../view/MovieView.js'
+
+export default class MovieController {
+  constructor(
+    private readonly model: MovieModel,
+    private readonly view: MovieView
+  ) {
+    console.log('MovieController')
+  }
+
+  readonly initComponent = async () => {
+    await this.model.initComponent()
+    this.view.initComponent()
+  }
+
+    readonly getTotalMovies = (): number => {
+        return this.model.getTotalMovies()
+    }
+
+    readonly updateMoviesForPage = (offset: number, limit: number) => {
+        this.model.updateMoviesForPage(offset, limit)
+    }
+
+    readonly filterMovies = (searchTerm: string) => {
+    this.model.filterMovies(searchTerm)
+  }
+}
